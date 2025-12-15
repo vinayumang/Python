@@ -34,3 +34,7 @@ print("3D Array Dimension:", array_3d.ndim)  # 3
 arr=np.array([1,2,3,4],ndmin=5)   #define karte waqt hi 5 dimension ka array ban jayega
 print(arr)
 print("Dimensions of the array with ndmin=5:",arr.ndim)  #ndim sai pata chal jayega kitne dimension ka array hai
+print("Shape of the array with ndmin=5:",arr.shape)    #shape bhi pata chal jayega
+# Output:
+# [[[[[1 2 3 4]]]]]
+# Dimensions of the array with ndmin=5: 5
