@@ -13,15 +13,32 @@
 # score() - Checks how accurate the model is (R² score)
 # Close to 1 = good predictions, close to 0 = poor predictions
 
-#Q) Inputs are from user end and compute rent based on area using Linear Regression
+"""Q) Inputs are from user end and compute rent based on area using Linear Regression"""
 
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
-x = np.array([[1000], [750], [1000], [1250], [1500], [1750], [2000]])  #why extra brackets? because sklearn expects 2D array for features
-y = np.array([4000, 2000, 2500, 3000, 3500, 4000, 4500])    #why single bracket? because target variable is 1D array
+X = np.array([[1000], [1200], [700], [650], [1800],[2000]])  #why extra brackets? because sklearn expects 2D array for features also apply while importing csv file
+y = np.array([4000, 4500,3500, 2500, 5500, 5300])    #why single bracket? because target variable is 1D array
 model = LinearRegression()  
-model.fit(x, y)
+model.fit(X, y)
 area = float(input("Enter the area of the house in sq ft: "))
 price = model.predict([[area]])
 print(f"Area in SqFt: {area}, Price: {price[0]}")
+
+
+#Alternative way using pandas to read data from csv file
+#from sklearn.linear_model import LinearRegression
+#import pandas as pd
+# Read data from CSV file
+# df = pd.read_csv('house_data.csv')
+# Separate features (X) and target (y)
+# X = df[['Area']]  # Double brackets keep it as DataFrame (2D)
+# y = df['Rent']     # Single bracket makes it a Series (1D)
+# Create and train the model
+# model = LinearRegression()
+# model.fit(X, y)
+# Get user input and predict
+# area = float(input("Enter the area of the house in sq ft: "))
+# price = model.predict([[area]])  # Double brackets for 2D array
+# print(f"Area in SqFt: {area}, Price: {price[0]}")
