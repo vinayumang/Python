@@ -27,6 +27,7 @@ This warning occurs because the input provided to the predict method does not ma
 In this case, the model was trained using a DataFrame with a column named 'Hours', but the input was provided as a simple list or array without specifying the feature name.
 To avoid this warning, ensure that the input to the predict method is in the same format as the training data, including the feature names.
 
+The problem: You created input_df correctly but then didn't use it. You still passed [[inputhours]] to predict(), which is why the warning appeared.
 
 inputhours=float(input("Enter the study hours: "))
 marks_predict=model.predict([[inputhours]]) #Warning :X does not have valid feature names, but LinearRegression was fitted with feature names
