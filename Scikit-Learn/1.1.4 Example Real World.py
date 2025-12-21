@@ -31,9 +31,7 @@ word_count = int(input("Enter word count: "))
 special_chars = int(input("Enter special character count: "))
 links = int(input("Enter number of links: "))
 
-new_email = pd.DataFrame({'word_count': [word_count], 
-                          'special_chars': [special_chars], 
-                          'links': [links]})
+new_email = pd.DataFrame({'word_count': [word_count],'special_chars': [special_chars],'links': [links]})
 prediction = model.predict(new_email)
 
 print(f"Prediction: {'SPAM' if prediction[0] == 1 else 'NOT SPAM'}")
