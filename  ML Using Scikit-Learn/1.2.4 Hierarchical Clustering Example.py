@@ -13,7 +13,7 @@ linked = linkage(X, method ='ward')
 
 dendrogram = dendrogram(linked,orientation= 'top', show_leaf_counts =True)
 
-plt.xlabel("Data Mearge Point")
+plt.xlabel("Data Merge Point")
 plt.ylabel("Difference Income / Expense")
 plt.title("Organisation Income/ Expense Dendrogram")
 plt.show()
