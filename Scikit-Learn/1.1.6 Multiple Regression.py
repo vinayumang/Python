@@ -1,6 +1,7 @@
 """Multile Regression is a statistical technique that uses multiple explanatory variables to predict the outcome of a response variable. 
 The goal of multiple regression is to model the relationship between the explanatory and 
 response variables, allowing for more accurate predictions and insights into how different factors influence the outcome."""
+
 #Example:Dataset for people area in sq.ft,age,income by using multiple regression predict the rent input required area age and income of people
 
 import pandas as pd
