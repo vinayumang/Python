@@ -16,4 +16,10 @@ Dimensionality Reduction
 Simplifies data (100 cols → 2 cols)
 PCA: Compresses while keeping info
 Use: Visualization, speed up models
+
+1. K-Means
+2. Hierarchical Clustering
+3. DBSCAN (density-based)
+4. PCA (dimensionality reduction)
+5. Association Rules (Apriori)
 """
