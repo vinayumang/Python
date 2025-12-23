@@ -10,7 +10,6 @@ df1 = df[['Income','Expense']]
 X = np.array(df1)
 plt.figure(figsize=(8,5))
 linked = linkage(X, method ='ward')
-
 dendrogram = dendrogram(linked,orientation= 'top', show_leaf_counts =True)
 
 plt.xlabel("Data Merge Point")
