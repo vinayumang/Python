@@ -9,7 +9,7 @@
 start = int(input("Enter start range: "))
 end = int(input("Enter end range: "))
 
-for num in range(start, end + 1):   # end +1 to include end number
+for num in range(start, end + 1):   # end +1 to include end number kyuki range function end ko include nahi karta
     if num <= 1:                  # Numbers less than or equal to 1 are not prime
         continue
     for i in range(2, num // 2 + 1):  # Check if num has any divisors from 2 to num/2
