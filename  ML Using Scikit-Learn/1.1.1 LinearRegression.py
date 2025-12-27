@@ -24,7 +24,7 @@ model = LinearRegression()
 model.fit(X, y)
 area = float(input("Enter the area of the house in sq ft: "))
 price = model.predict([[area]])
-print(f"Area in SqFt: {area}, Price: {price[0]}")
+print(f"Area in SqFt: {area}, Price: {price[0]}") #why price[0]? because predict() returns an array, we need the first element
 
 
 #Alternative way using pandas to read data from csv file
