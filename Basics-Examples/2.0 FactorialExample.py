@@ -25,7 +25,7 @@ else:
 num = int(input("Enter a number to find its factorial using recursion: "))
 def factorial_recursive(n): 
     if n == 0 or n == 1:  # check karta hai ki passs kiya hua number 0 ya 1 hai
-        return 1
+        return 1  #return 1 as factorial of 0 and 1 is 1
     else:
         return n * factorial_recursive(n - 1)  # Recursive case 
 result = factorial_recursive(num)
