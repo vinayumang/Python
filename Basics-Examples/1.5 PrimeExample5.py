@@ -17,7 +17,7 @@ for num in range(start, end + 1):   # end +1 to include end number kyuki range f
             break
     else:                              # No divisors found, so it's prime
         print(num, end=" ")
-print()
+# print()
 # Using square root method to improve efficiency
 # This method can be inefficient for large ranges.  
 
