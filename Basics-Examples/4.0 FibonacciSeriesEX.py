@@ -1,33 +1,51 @@
 #Fibonacci series are a series of numbers where a number is the sum of the two preceding ones, usually starting with 0 and 1.
 # Example: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
-num =int(input("Enter a number : "))
-x,y=0,1
-z=0
-print("Fibonacci series:")
-while z<=num:
-    print(z,end=' ')
-    x=y
-    y=z
-    z=x+y   
+ 
+n = int(input("Enter number of terms: "))  
+a, b = 0, 1                       #user 1 dala tab range mai 1 ayega sirf a ka value print ho jayega 0
+for i in range(n):
+    print(a, end=" ")
+    a, b = b, a + b   
+    
+# The statement a, b = b, a + b uses Python's simultaneous assignment (also called tuple unpacking or parallel assignment) 
+# to update both variables at once using their original values.
 
-print()  #new line for better output formatting
+# Think of a, b = b, a + b as a two-step update done in one line.
+# You are doing this in Fibonacci:
+# * a = current term
+# * b = next term
+# And you want to move one step forward:
+# * new a should become old b (next term becomes current term)
+# * new b should become old a + b (next term = sum of previous two terms)
+# So conceptually you want:
+
+# python
+# new_a = old_b
+# new_b = old_a + old_b
+# Python does exactly this with:
+
+# python
+# a, b = b, a + b
+# What happens internally
+# Python evaluates the right side first and makes a pair (tuple):
+
+# python
+# (b, a + b)
+# using the old values of a and b.Then it unpacks:
+
+# python
+# a = old b
+# b = old (a + b)
+# So both updates happen simultaneously, and old a is still available when computing a + b.
 
 
-#Alternative approach to generate Fibonacci series up to n terms
-
-n = int(input("Enter the number : "))       
+# Using while loop    
+n = int(input("Enter number of terms: "))
 a, b = 0, 1
-count = 0   
-if n <= 0:
-    print("Please enter a positive integer")
-elif n == 1:
-    print("Fibonacci series up to", n, ":")
-    print(a)
-else:
-    print("Fibonacci series:")
-    while count < n:
-        print(a, end=' ')  #print karte hain current term ,iske baad space de dete hain ,a+b use karte hain next term nikalne ke liye
-        a, b = b, a + b    # Update karte hain values of a and b aur b ko next term bana dete hain
-        count += 1          # Increment karte hain count kyunki ek term print kar chuke hain
-# Is code ka time complexity O(n) hai kyunki loop n times chalta hai.
-# Is code ka space complexity O(1) hai kyunki humne constant space use kiya hai. 
+count = 0
+
+while count < n:
+    print(a, end=" ")
+    a, b = b, a + b
+    count += 1
+print()
