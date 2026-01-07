@@ -16,6 +16,15 @@ print("GCD of", num1, "and", num2, "is", gcd)
 #i divide kar raha hai dono numbers ko common divisor ke roop mai aur gcd ko update kar raha hai jab bhi ek naya common divisor milta hai.
 # Iska time complexity O(min(num1, num2)) hai kyuki loop chota number tak chalta hai.
 
+
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+original_num1 = num1    # Store original values for final output
+original_num2 = num2
+while num2 != 0:        # Jab tak num2 0 nahi ho jata ,# Euclidean algorithm
+    num1, num2 = num2, num1 % num2  # Swap: num1 becomes num2, num2 becomes num1 % num2
+print("GCD of", original_num1, "and", original_num2, "is", num1)
+
 #Using math module
 import math
 num1 = int(input("Enter first number: "))
@@ -43,7 +52,7 @@ def gcd_simple_loop(a, b):
     Find GCD by checking all divisors up to smaller number
     """
     smaller = min(a, b)
-    for i in range(smaller, 0, -1):
+    for i in range(smaller, 0, -1): # range(start, stop, step) -1 means decrementing
         
         if a % i == 0 and b % i == 0:
             return i  # Found GCD, return immediately
