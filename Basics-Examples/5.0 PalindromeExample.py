@@ -1,7 +1,7 @@
 # 1. Using string slicing
 s = input("Enter a string: ")
 
-if s == s[::-1]:
+if s == s[::-1]:         #slicing to reverse the string
     print("Palindrome")
 else:
     print("Not Palindrome")
